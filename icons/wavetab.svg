@@ -1,0 +1,16 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <rect width="96" height="96" rx="22" fill="#0A0A0A"></rect>
+  <rect width="96" height="96" rx="22" fill="none" stroke="#ffffff08" stroke-width="1"></rect>
+  <ellipse cx="48" cy="52" rx="36" ry="20" fill="#00D4AA" opacity="0.08"></ellipse>
+  <clipPath id="cc"><rect x="18" y="30" width="60" height="38"></rect></clipPath>
+  <g clip-path="url(#cc)">
+    <g class="b1"><rect x="18" y="22" width="6" height="12" rx="2" fill="#00D4AA"></rect></g>
+    <g class="b2"><rect x="27" y="10" width="6" height="24" rx="2" fill="#00C9FF"></rect></g>
+    <g class="b3"><rect x="36" y="0" width="6" height="34" rx="2" fill="#7B8FFF"></rect></g>
+    <g class="b4"><rect x="45" y="14" width="6" height="20" rx="2" fill="#B97BFF"></rect></g>
+    <g class="b5"><rect x="54" y="20" width="6" height="14" rx="2" fill="#FF6FB8"></rect></g>
+    <g class="b6"><rect x="63" y="6" width="6" height="28" rx="2" fill="#FF9860"></rect></g>
+    <g class="b7"><rect x="72" y="16" width="6" height="18" rx="2" fill="#FFD060"></rect></g>
+  </g>
+  <rect x="14" y="68" width="68" height="2" rx="1" fill="#ffffff10"></rect>
+</svg>

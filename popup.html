@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Visualizer Settings</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <section class="popup-card">
+    <p class="eyebrow">WaveTab</p>
+    <h1>Playback Settings</h1>
+    <p class="status" id="status">Loading status…</p>
+    <button class="primary-button" id="toggle-current-tab" type="button">Enable On This Tab</button>
+    <p class="helper" id="helper">Checking the active tab…</p>
+
+    <label class="setting-row setting-row-toggle" for="auto-random">
+      <span>
+        <strong>Random visualization</strong>
+        <small>Automatically switch presets while the visualizer is running.</small>
+      </span>
+      <input id="auto-random" type="checkbox" />
+    </label>
+
+    <label class="setting-row" for="switch-interval">
+      <span>
+        <strong>Time to switch</strong>
+        <small>How many seconds to wait before switching to another preset.</small>
+      </span>
+      <input id="switch-interval" type="number" min="5" max="300" step="5" />
+    </label>
+
+    <fieldset class="setting-group">
+      <legend>Select mode</legend>
+      <label class="radio-row" for="display-mode-full">
+        <input id="display-mode-full" name="display-mode" type="radio" value="full" />
+        <span>
+          <strong>Whole video</strong>
+          <small>Default mode. The visualizer covers the current video frame.</small>
+        </span>
+      </label>
+      <label class="radio-row" for="display-mode-corner">
+        <input id="display-mode-corner" name="display-mode" type="radio" value="corner" />
+        <span>
+          <strong>Top-left corner</strong>
+          <small>Show the visualizer as a smaller overlay in the top-left of the video.</small>
+        </span>
+      </label>
+    </fieldset>
+
+    <p class="hint">Playback starts and stops from this popup.</p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

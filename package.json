@@ -1,0 +1,26 @@
+{
+  "name": "yt-visualizer",
+  "version": "0.3.0",
+  "description": "WaveTab turns YouTube audio into a vivid visualizer with popup controls and onboarding.",
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "chrome-extension",
+    "youtube",
+    "visualizer",
+    "milkdrop",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.1.24",
+    "butterchurn": "^2.6.7",
+    "butterchurn-presets": "^2.4.7",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.8.3"
+  }
+}

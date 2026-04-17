@@ -1,0 +1,140 @@
+:root {
+  color-scheme: light;
+  --bg: #f2efe8;
+  --card: rgba(255, 252, 246, 0.96);
+  --ink: #19212b;
+  --muted: #66717d;
+  --line: rgba(25, 33, 43, 0.12);
+  --accent: #d93a2f;
+  --accent-soft: rgba(217, 58, 47, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 340px;
+  background: #ffffff;
+  color: var(--ink);
+  font: 14px/1.45 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+.popup-card {
+  padding: 18px;
+  background: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font: 700 22px/1.1 'Avenir Next Condensed', 'Avenir Next', sans-serif;
+}
+
+.status,
+.helper,
+.hint,
+.setting-row small,
+.radio-row small {
+  color: var(--muted);
+}
+
+.status {
+  margin: 0 0 16px;
+}
+
+.primary-button {
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d93a2f 0%, #ba241b 100%);
+  color: #fff9f5;
+  font: 700 14px/1 'Avenir Next', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(217, 58, 47, 0.24);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  box-shadow: none;
+}
+
+.helper {
+  margin: 0 0 16px;
+}
+
+.setting-row,
+.radio-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.setting-row {
+  justify-content: space-between;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.setting-row-toggle input,
+.radio-row input {
+  accent-color: var(--accent);
+}
+
+.setting-row strong,
+.radio-row strong,
+.setting-group legend {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.setting-row input[type='number'] {
+  width: 88px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fffdf8;
+  color: var(--ink);
+  font: inherit;
+}
+
+.setting-group {
+  margin: 0;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.setting-group legend {
+  padding: 0;
+}
+
+.radio-row {
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.radio-row + .radio-row {
+  margin-top: 10px;
+}
+
+.hint {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
