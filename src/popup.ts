@@ -25,7 +25,6 @@ const modeInputFull = document.getElementById('display-mode-full') as HTMLInputE
 const modeInputCorner = document.getElementById('display-mode-corner') as HTMLInputElement | null;
 const statusEl = document.getElementById('status') as HTMLParagraphElement | null;
 const toggleButton = document.getElementById('toggle-current-tab') as HTMLButtonElement | null;
-const helperEl = document.getElementById('helper') as HTMLParagraphElement | null;
 
 let currentSettings = DEFAULT_SETTINGS;
 let currentStatus: VizStatus = { activeTabId: null, isActive: false };
@@ -97,7 +96,7 @@ async function persistSettings(patch: Partial<VizSettings>): Promise<void> {
 async function toggleCurrentTab(): Promise<void> {
   await refreshActiveTab();
   if (!currentTabIsWatchPage || currentTabId === null || !toggleButton) {
-    renderStatus('Open a YouTube watch page in the active tab first.');
+    renderStatus('Open a YouTube video first.');
     return;
   }
 
@@ -110,7 +109,7 @@ async function toggleCurrentTab(): Promise<void> {
   toggleButton.disabled = false;
 
   if (!response.ok) {
-    renderStatus(response.reason || 'Chrome blocked tab capture for this tab.');
+    renderStatus(response.reason || 'Chrome blocked capture on this tab.');
     return;
   }
 
@@ -159,12 +158,6 @@ function renderStatus(overrideMessage?: string): void {
     toggleButton.textContent = isActiveOnCurrentTab ? 'Turn Off On This Tab' : 'Enable On This Tab';
   }
 
-  if (helperEl) {
-    helperEl.textContent = currentTabIsWatchPage
-      ? 'Use this popup to start the visualizer for the current YouTube tab. Chrome requires the capture grant to begin from the extension popup.'
-      : 'Switch to a YouTube watch page, then use the button above to grant capture for that tab.';
-  }
-
   if (overrideMessage) {
     statusEl.textContent = overrideMessage;
     return;
@@ -172,12 +165,12 @@ function renderStatus(overrideMessage?: string): void {
 
   if (currentStatus.activeTabId !== null) {
     statusEl.textContent = isActiveOnCurrentTab
-      ? 'Visualizer is active on this YouTube tab.'
-      : 'Visualizer is active on another YouTube tab.';
+      ? 'WaveTab is on for this tab.'
+      : 'WaveTab is on in another tab.';
     return;
   }
 
   statusEl.textContent = currentTabIsWatchPage
-    ? 'Open this popup and click Enable On This Tab to start the visualizer.'
-    : 'Open a YouTube watch page to enable the visualizer for the current tab.';
+    ? 'Enable WaveTab on this tab.'
+    : 'Open a YouTube video to continue.';
 }
