@@ -1,4 +1,5 @@
 import { cp, mkdir, rm } from 'node:fs/promises';
+import path from 'node:path';
 
 import * as esbuild from 'esbuild';
 
@@ -12,13 +13,13 @@ const entryPoints = [
 ];
 const staticFiles = [
   'manifest.json',
-  'content.css',
-  'offscreen.html',
-  'sandbox.html',
-  'popup.html',
-  'popup.css',
-  'onboarding.html',
-  'onboarding.css',
+  'src/static/content.css',
+  'src/static/offscreen.html',
+  'src/static/sandbox.html',
+  'src/static/popup.html',
+  'src/static/popup.css',
+  'src/static/onboarding.html',
+  'src/static/onboarding.css',
 ];
 
 await rm(DIST_DIR, { recursive: true, force: true });
@@ -39,7 +40,7 @@ await Promise.all(
 );
 
 await Promise.all(
-  staticFiles.map((file) => cp(file, `${DIST_DIR}/${file}`)),
+  staticFiles.map((file) => cp(file, `${DIST_DIR}/${path.basename(file)}`)),
 );
 
 await cp('icons', `${DIST_DIR}/icons`, { recursive: true });
